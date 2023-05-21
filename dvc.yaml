@@ -1,0 +1,13 @@
+stages:
+  load_data:
+    cmd: python src/data/load_data.py
+    deps:
+      - src/data/get_data.py
+      - src/data/load_data.py
+      - behealthy_data/train_label.txt
+      - behealthy_data/train_sent.txt
+      - behealthy_data/test_label.txt
+      - behealthy_data/test_sent.txt
+    outs:
+      - data/raw/train.csv
+      - data/raw/test.csv
